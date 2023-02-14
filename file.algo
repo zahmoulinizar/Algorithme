@@ -1,0 +1,19 @@
+ALGORITHM algorithm_name
+VAR
+    count1 : INTEGER := 0;  //nombre de lettres dans la phrase
+    count2 : INTEGER := 0; // nombre de mots
+    count3 : INTEGER :=0;
+    sentence: STRING ;
+    i : INTEGER;
+BEGIN
+    WHILE (sentence[i]!=".") DO
+        count1:= count1+1;
+        IF (sentence[i]=" ") THEN
+            count2:=count2+1;
+        END_IF
+        IF (sentence[i]=[a,o,i,u,y,e]) THEN
+            count3:=count3+1;
+        END_IF
+        i:=i+1;
+    END_WHILE
+END
