@@ -3,17 +3,28 @@ VAR
     count1 : INTEGER := 0;  //nombre de lettres dans la phrase
     count2 : INTEGER := 0; // nombre de mots
     count3 : INTEGER :=0;
-    sentence: STRING ;
+    ch: STRING ;
     i : INTEGER;
 BEGIN
-    WHILE (sentence[i]!=".") DO
-        count1:= count1+1;
-        IF (sentence[i]=" ") THEN
-            count2:=count2+1;
-        END_IF
-        IF (sentence[i]=[a,o,i,u,y,e]) THEN
-            count3:=count3+1;
-        END_IF
-        i:=i+1;
-    END_WHILE
+
+WHILE (ch[i]!=".") DO
+    count1:= count1+1;
+END_WHILE
+
+FOR i FROM 0 TO count1 STEP 1  DO
+    IF (ch[i]=" ") THEN
+        count2:=count2+1;
+    END_IF
+END_FOR
+
+
+WHILE (i < count1) DO
+    IF (ch[i]=="a"|| ch[i]=="i"|| ch[i]=="u"|| ch[i]=="e"|| ch[i]=="o"|| ch[i]=="y") THEN
+        count3:=count3+1;
+    END_IF
+
+    i:=i+1;
+
+END_WHILE    
+
 END
